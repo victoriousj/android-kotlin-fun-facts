@@ -1,11 +1,11 @@
 package com.victordjohnson.funfacts
 
-import android.content.Context
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.Toast
+import android.widget.TextView
 import java.util.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,9 +15,12 @@ class MainActivity : AppCompatActivity() {
 
       val rand = Random()
 
-      var btn = findViewById<Button>(R.id.hello)
-      btn.setOnClickListener {toast(rand.nextInt().toString())}
+      val btn = findViewById<Button>(R.id.showFactButton)
+
+      btn.setOnClickListener {
+        val text = findViewById<TextView>(R.id.funFactTextView)
+        val num = rand.nextInt().toString()
+        text.text = num
+      }
     }
-  private fun Context.toast(message: CharSequence)=
-      Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 }
