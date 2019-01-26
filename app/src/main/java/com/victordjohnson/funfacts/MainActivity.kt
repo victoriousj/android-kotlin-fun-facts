@@ -21,8 +21,8 @@ class MainActivity : AppCompatActivity() {
       funFactTextView.text = factBook.getFact()
 
       val newColor = colorWheel.getColor()
-      relativeLayout!!.setBackgroundColor(newColor)
-      showFactButton!!.setTextColor(newColor)
+      relativeLayout.setBackgroundColor(newColor)
+      showFactButton.setTextColor(newColor)
 
       Log.d(TAG, "click" )
     }
